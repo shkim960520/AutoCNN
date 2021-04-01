@@ -56,7 +56,7 @@ def train_model(models, dataloaders, dataset_sizes, criterions, optimizers, num_
                 loss = cls_loss
                 if x_hat != None:
                     rec_loss = mse(x_hat, inputs)
-                    loss = cls_loss + rec_loss
+                    loss = cls_loss + 0.3*rec_loss
 
                 if phase == 'train':
                     loss.backward()
