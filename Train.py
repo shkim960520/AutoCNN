@@ -20,7 +20,6 @@ args = utils.parser.parse_args()
 """
 describe argument
 
-save_path = './log/classifier.pytorch' --path to save model
 data_dir = '../chest_xray' --dataset path for training
 log_path = 'log' --path for logging loss
 log_metrics = True  --log metrics(True) or not(False)
@@ -123,7 +122,7 @@ trained = Trainer.train_model(
 
 classifier, best_acc, train_loss_history, val_loss_history = trained
 classifier.eval()
-torch.save(classifier, args.save_path)
+torch.save(classifier, os.path.join(args.log_path, 'classifier.pytorch'))
 
 if args.log_metrics:
     df_train = pd.DataFrame(train_loss_history)

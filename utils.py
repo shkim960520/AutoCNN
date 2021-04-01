@@ -11,13 +11,6 @@ def str2bool(v):
 parser = argparse.ArgumentParser()
 
 parser.add_argument(
-    "--save_path",
-    type = str,
-    default = './log/classifier.pytorch',
-    help = 'path to save model'
-)
-
-parser.add_argument(
     "--data_dir",
     type = str,
     default = '../chest_xray',
